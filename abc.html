@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock </title>
+    <style>
+        body{
+            background: #302828;
+            color: white;
+        }
+        .maindiv{
+            height: 100px ;
+            width: 400px;
+            background: #000;
+            /* display: flex; */
+        text-align: center  ;
+            justify-content: center;
+            margin-top: 300px ;
+            margin-left: 450px;
+            color: white;
+            font-family:Ink Free;
+            font-size:40px;
+            border: 2px solid rgba(255, 115, 0, 0.856);
+            border-radius: 5%;
+            box-shadow: 5px 5px 5px rgba(255, 115, 0, 0.856);
+
+        }
+        #line {
+        width: 300px; 
+        height: 5px;  
+        background-color: rgba(255, 115, 0, 0.856); 
+        margin-top:7px;
+        margin-left: 495px;
+        box-shadow: 5px 5px 5px rgba(255, 115, 0, 0.856);
+    }   
+
+    </style>
+</head>
+<body>
+    <div >
+        <div class="maindiv">
+            <p id="clock"></p>
+        </div>
+        <div id="line"></div>
+
+    </div>
+
+    <script>
+        const currentTime=()=>{
+            let curTime=new Date().toLocaleTimeString();
+            document.getElementById("clock").innerText=curTime;
+        };
+        currentTime();
+
+        const intervalId= setInterval(()=>{
+            currentTime();
+        },1000);
+// to stop this timer after a pariticukar interval we use this setTimeout method else comment out
+
+        setTimeout(()=>
+            clearInterval(intervalId),5000);
+
+        
+
+    </script>
+</body>
+</html>
