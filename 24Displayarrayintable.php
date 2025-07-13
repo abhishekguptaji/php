@@ -6,6 +6,7 @@ $array=[
 ];
 
 echo "<table border='2'>";
+echo  "<h1>Employee Details.</h1>";
 for($i=0;$i<count($array);$i++){
   echo "<tr>";
   for($j=0;$j<count($array[$i]);$j++){
