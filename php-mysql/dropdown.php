@@ -1,14 +1,19 @@
 <?php
 include("./config.php");
-$getStudent=$conn->prepare("select id,name from info");
-$getStudent->execute();
-$studentData=$getStudent->fetchAll();
 
+// Prepare and execute the query
+$getStudent = $conn->prepare("SELECT id, name FROM info");
+$getStudent->execute();
+$studentData = $getStudent->fetchAll();
+
+// Begin dropdown
 echo "<select>";
 echo "<option>Select Name</option>";
-foreach($studentData as $student){
-  echo "<option" .$student['id'].">".$student['name']."</option>";
-}
-echo "</select>";
 
+// Loop through and print each student
+foreach ($studentData as $student) {
+  echo "<option value='" . $student['id'] . "'>" . htmlspecialchars($student['name']) . "</option>";
+}
+
+echo "</select>";
 ?>
