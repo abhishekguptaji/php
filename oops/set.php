@@ -1,4 +1,4 @@
-<?php
+ <?php
 class User{
   private $name ="abhi";
   function __set($property,$value){

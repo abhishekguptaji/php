@@ -1,4 +1,4 @@
-<?php
+ <?php
 class User {
     private function getName($name) {
         echo $name;
